@@ -13,3 +13,14 @@ Important fields:
 - `status`: Short implementation status.
 - `tags`: Search/filter tags.
 - `stars`, `created_at`, `pushed_at`: GitHub metadata refreshed by `scripts/refresh_github_metadata.py`.
+
+`data/collections.json` defines curated tracks for buy-in oriented browsing.
+
+Important fields:
+
+- `id`: Stable slug used for the generated page under `docs/collections/`.
+- `title`: Human-readable collection title.
+- `hook`: One-sentence reason the track is interesting.
+- `who`: Intended audience.
+- `why_now`: Why this direction is currently worth tracking.
+- `repos`: Ordered list of repository names already present in `data/reproductions.json`.

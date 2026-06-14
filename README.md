@@ -4,21 +4,22 @@
 
 **A searchable radar of high-interest AI papers and unofficial PyTorch reproduction repositories.**
 
-![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Categories](https://img.shields.io/badge/categories-10-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-14-green) ![License](https://img.shields.io/badge/license-MIT-green)
+![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Collections](https://img.shields.io/badge/curated_tracks-7-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-14-green) ![License](https://img.shields.io/badge/license-MIT-green)
 
-[Browse table](#repository-radar) · [Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)
+[Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · [Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)
 
 </div>
 
 > Maintained by [@StaryMoon](https://github.com/StaryMoon). If this radar helps you find, compare, or start reproducing an AI paper, please consider starring the repository and following my GitHub profile.
 
-## Why This Exists
+## What Makes This Different
 
-AI papers move faster than official code releases. This repository collects paper-to-code reproduction entries in one place so readers can quickly answer three questions:
+Most paper lists are either raw link dumps or single-topic awesome lists. This radar is built around three more useful layers:
 
-- Which hot papers already have a public reproduction entry?
-- Where is the paper, PDF, repository, and current implementation interface?
-- Which direction should I inspect next: reasoning, VLM, video, robotics, 3D, restoration, or code models?
+- **Searchable data layer**: every entry is stored in `data/reproductions.json` for scripting, filtering, and reuse.
+- **Curated tracks**: papers are grouped by research intent, not only by repo name or conference.
+- **Implementation-status view**: each entry points to paper, repo, tags, and current reproduction interface in one table.
+- **Daily metadata refresh**: GitHub Actions can refresh stars, topics, and push timestamps without manual bookkeeping.
 
 Every linked implementation is clearly marked as **unofficial** and keeps paper citations separate from local experiment logs.
 
@@ -26,16 +27,31 @@ Every linked implementation is clearly marked as **unofficial** and keeps paper 
 
 | Area | Count | Representative repos |
 |---|---:|---|
-| Frontier LLMs | 11 | [Chat2SVG](https://github.com/StaryMoon/Chat2SVG-Unofficial), [DeepSeek-V3](https://github.com/StaryMoon/DeepSeek-V3-Unofficial), [DiffSensei](https://github.com/StaryMoon/DiffSensei-Unofficial), [Gemma-3](https://github.com/StaryMoon/Gemma-3-Unofficial), [InternVL3](https://github.com/StaryMoon/InternVL3-Unofficial) |
-| Reasoning LLMs | 10 | [DAPO](https://github.com/StaryMoon/DAPO-Unofficial), [DeepSeek-R1](https://github.com/StaryMoon/DeepSeek-R1-Unofficial), [Kimi-k1-5](https://github.com/StaryMoon/Kimi-k1-5-Unofficial), [LIMO](https://github.com/StaryMoon/LIMO-Unofficial), [LongVT](https://github.com/StaryMoon/LongVT-Unofficial) |
-| Vision-Language Models | 8 | [Demo2Tutorial](https://github.com/StaryMoon/Demo2Tutorial-Unofficial), [Janus-CVPR2025](https://github.com/StaryMoon/Janus-CVPR2025-Unofficial), [Janus-Pro](https://github.com/StaryMoon/Janus-Pro-Unofficial), [OmniGen2](https://github.com/StaryMoon/OmniGen2-Unofficial), [OpenVLA](https://github.com/StaryMoon/OpenVLA-Unofficial) |
-| Video and World Models | 10 | [CogVideoX](https://github.com/StaryMoon/CogVideoX-Unofficial), [Cosmos-WFM](https://github.com/StaryMoon/Cosmos-WFM-Unofficial), [DeltaWorld](https://github.com/StaryMoon/DeltaWorld-Unofficial), [Diffusion-Renderer](https://github.com/StaryMoon/Diffusion-Renderer-Unofficial), [HunyuanVideo](https://github.com/StaryMoon/HunyuanVideo-Unofficial) |
-| Generation and Diffusion | 3 | [ACE-Step](https://github.com/StaryMoon/ACE-Step-Unofficial), [SANA](https://github.com/StaryMoon/SANA-Unofficial), [Stable-Diffusion-3](https://github.com/StaryMoon/Stable-Diffusion-3-Unofficial) |
+| Frontier LLMs | 7 | [DeepSeek-V3](https://github.com/StaryMoon/DeepSeek-V3-Unofficial), [Gemma-3](https://github.com/StaryMoon/Gemma-3-Unofficial), [InternVL3](https://github.com/StaryMoon/InternVL3-Unofficial), [Kimi-VL](https://github.com/StaryMoon/Kimi-VL-Unofficial), [LLaDA-V](https://github.com/StaryMoon/LLaDA-V-Unofficial) |
+| Reasoning LLMs | 9 | [DAPO](https://github.com/StaryMoon/DAPO-Unofficial), [DeepSeek-R1](https://github.com/StaryMoon/DeepSeek-R1-Unofficial), [Kimi-k1-5](https://github.com/StaryMoon/Kimi-k1-5-Unofficial), [LIMO](https://github.com/StaryMoon/LIMO-Unofficial), [Open-Reasoner-Zero](https://github.com/StaryMoon/Open-Reasoner-Zero-Unofficial) |
+| Vision-Language Models | 4 | [Demo2Tutorial](https://github.com/StaryMoon/Demo2Tutorial-Unofficial), [Janus-CVPR2025](https://github.com/StaryMoon/Janus-CVPR2025-Unofficial), [Janus-Pro](https://github.com/StaryMoon/Janus-Pro-Unofficial), [OmniGen2](https://github.com/StaryMoon/OmniGen2-Unofficial) |
+| Video and World Models | 11 | [LongVT](https://github.com/StaryMoon/LongVT-Unofficial), [CogVideoX](https://github.com/StaryMoon/CogVideoX-Unofficial), [Cosmos-WFM](https://github.com/StaryMoon/Cosmos-WFM-Unofficial), [DeltaWorld](https://github.com/StaryMoon/DeltaWorld-Unofficial), [Diffusion-Renderer](https://github.com/StaryMoon/Diffusion-Renderer-Unofficial) |
+| Generation and Diffusion | 5 | [Chat2SVG](https://github.com/StaryMoon/Chat2SVG-Unofficial), [DiffSensei](https://github.com/StaryMoon/DiffSensei-Unofficial), [ACE-Step](https://github.com/StaryMoon/ACE-Step-Unofficial), [SANA](https://github.com/StaryMoon/SANA-Unofficial), [Stable-Diffusion-3](https://github.com/StaryMoon/Stable-Diffusion-3-Unofficial) |
 | 3D and Rendering | 8 | [DeSiRe-GS](https://github.com/StaryMoon/DeSiRe-GS-Unofficial), [Feat2GS](https://github.com/StaryMoon/Feat2GS-Unofficial), [FlashGS](https://github.com/StaryMoon/FlashGS-Unofficial), [Hunyuan3D-2](https://github.com/StaryMoon/Hunyuan3D-2-Unofficial), [Omni-Scene](https://github.com/StaryMoon/Omni-Scene-Unofficial) |
-| Robotics and Embodied AI | 3 | [DexGrasp-Anything](https://github.com/StaryMoon/DexGrasp-Anything-Unofficial), [RDT-1B](https://github.com/StaryMoon/RDT-1B-Unofficial), [Tartan-IMU](https://github.com/StaryMoon/Tartan-IMU-Unofficial) |
-| Image Restoration | 6 | [Dual-Prompt-DiT](https://github.com/StaryMoon/Dual-Prompt-DiT-Unofficial), [IPC-Dehaze](https://github.com/StaryMoon/IPC-Dehaze-Unofficial), [OSDFace](https://github.com/StaryMoon/OSDFace-Unofficial), [ResFlow](https://github.com/StaryMoon/ResFlow-Unofficial), [UniRestore](https://github.com/StaryMoon/UniRestore-Unofficial) |
-| Segmentation and Motion | 1 | [Motions-as-Queries](https://github.com/StaryMoon/Motions-as-Queries-Unofficial) |
-| Other AI Papers | 1 | [Mamba2](https://github.com/StaryMoon/Mamba2-Unofficial) |
+| Robotics and Embodied AI | 6 | [DexGrasp-Anything](https://github.com/StaryMoon/DexGrasp-Anything-Unofficial), [RDT-1B](https://github.com/StaryMoon/RDT-1B-Unofficial), [Tartan-IMU](https://github.com/StaryMoon/Tartan-IMU-Unofficial), [OpenVLA](https://github.com/StaryMoon/OpenVLA-Unofficial), [Pi0](https://github.com/StaryMoon/Pi0-Unofficial) |
+| Image Restoration | 7 | [SnowMaster](https://github.com/StaryMoon/SnowMaster-Unofficial), [Dual-Prompt-DiT](https://github.com/StaryMoon/Dual-Prompt-DiT-Unofficial), [IPC-Dehaze](https://github.com/StaryMoon/IPC-Dehaze-Unofficial), [OSDFace](https://github.com/StaryMoon/OSDFace-Unofficial), [ResFlow](https://github.com/StaryMoon/ResFlow-Unofficial) |
+| Segmentation and Motion | 2 | [Motions-as-Queries](https://github.com/StaryMoon/Motions-as-Queries-Unofficial), [S-Seg](https://github.com/StaryMoon/S-Seg-Unofficial) |
+| Code Models | 1 | [Seed-Coder](https://github.com/StaryMoon/Seed-Coder-Unofficial) |
+| Efficient Sequence Models | 1 | [Mamba2](https://github.com/StaryMoon/Mamba2-Unofficial) |
+
+## Curated Tracks
+
+These are the buy-in oriented collections: each one explains who should care, why the area is hot, and which repos form a readable route through the topic.
+
+| Track | Good for | Why now | Representative repos |
+|---|---|---|---|
+| [Reasoning RL and Test-Time Scaling Pack](docs/collections/reasoning-rl-test-time-scaling.md) | LLM researchers, students building reasoning baselines, and engineers following GRPO-style systems. | Reasoning models are still the highest-search AI topic, and readers want one place that links papers, repos, and implementation interfaces. | `DeepSeek-R1`, `Kimi-k1-5`, `s1-Test-Time-Scaling`, `LIMO`, `DAPO`, +3 more |
+| [Frontier LLM Engineering Pack](docs/collections/frontier-llm-engineering.md) | LLM infrastructure learners, model architecture readers, and people comparing technical reports. | Most technical report readers do not need a full training run first; they need a structured implementation map and citation trail. | `DeepSeek-V3`, `Qwen3`, `Gemma-3`, `Phi-4`, `MiniMax-01`, +1 more |
+| [VLM, Multimodal, and Agent Interface Pack](docs/collections/vlm-agent-multimodal.md) | VLM students, multimodal agent builders, and researchers looking for cross-modal repo templates. | VLM work is fragmented across understanding, generation, action, and agent tasks; this track groups them by reusable interface shape. | `Qwen2-5-VL`, `InternVL3`, `Kimi-VL`, `Janus-Pro`, `Janus-CVPR2025`, +3 more |
+| [Video Generation and World Model Pack](docs/collections/video-world-models.md) | Video generation builders, world model readers, and robotics people who need visual dynamics references. | Video/world-model papers are search-heavy but scattered; a curated track makes the field easier to scan. | `HunyuanVideo`, `CogVideoX`, `Wan2-1`, `Cosmos-WFM`, `DeltaWorld`, +5 more |
+| [3D, Gaussian, and Rendering Pack](docs/collections/3d-rendering-generation.md) | 3D vision students, graphics readers, and embodied AI researchers who need a cross-paper map. | 3D repos are often hard to compare because each paper uses different asset, rendering, and representation assumptions. | `Hunyuan3D-2`, `TRELLIS`, `FlashGS`, `Feat2GS`, `DeSiRe-GS`, +4 more |
+| [Image Restoration and Low-Level Vision Pack](docs/collections/image-restoration-cvpr.md) | Low-level vision researchers, restoration students, and people following CVPR restoration papers. | Restoration work is easier to buy into when papers are grouped by degradation, prior, and interface rather than by conference only. | `ResFlow`, `IPC-Dehaze`, `OSDFace`, `Dual-Prompt-DiT`, `UniRestore`, +2 more |
+| [Robotics, VLA, and Embodied AI Pack](docs/collections/robotics-vla-embodied.md) | Robotics students, embodied AI builders, and people comparing action-conditioned model interfaces. | Robotics papers are getting pulled into foundation-model discussions; a focused track makes this transition more legible. | `OpenVLA`, `Pi0`, `RDT-1B`, `DexGrasp-Anything`, `RoboBrain`, +1 more |
 
 ## Repository Radar
 
@@ -45,17 +61,13 @@ The full machine-readable dataset lives in [`data/reproductions.json`](data/repr
 
 | Repo | Paper | Source | Implementation status | Tags |
 |---|---|---|---|---|
-| [Chat2SVG](https://github.com/StaryMoon/Chat2SVG-Unofficial) | Chat2SVG: Vector Graphics Generation with Large Language Models and Image Diffusion Models | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Wu_Chat2SVG_Vector_Graphics_Generation_with_Large_Language_Models_and_Image_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, diffusion, llm, multimodal-generation |
 | [DeepSeek-V3](https://github.com/StaryMoon/DeepSeek-V3-Unofficial) | DeepSeek-V3 Technical Report | [2412.19437](https://arxiv.org/abs/2412.19437) | README, config, PyTorch interface, smoke test, release | deepseek, deepseek-v3, llm, mla, moe |
-| [DiffSensei](https://github.com/StaryMoon/DiffSensei-Unofficial) | DiffSensei: Bridging Multi-Modal LLMs and Diffusion Models for Customized Manga Generation | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Wu_DiffSensei_Bridging_Multi-Modal_LLMs_and_Diffusion_Models_for_Customized_Manga_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, diffusion, diffusion-model, manga-generation |
 | [Gemma-3](https://github.com/StaryMoon/Gemma-3-Unofficial) | Gemma 3 Technical Report | [2503.19786](https://arxiv.org/abs/2503.19786) | README, config, PyTorch interface, smoke test, release | gemma, gemma-3, llm, long-context, multimodal |
 | [InternVL3](https://github.com/StaryMoon/InternVL3-Unofficial) | InternVL3: Exploring Advanced Training and Test-Time Recipes for Open-Source Multimodal Models | [2504.10479](https://arxiv.org/abs/2504.10479) | README, config, PyTorch interface, smoke test, release | internvl, mllm, multimodal-pretraining, pytorch, reproduction |
 | [Kimi-VL](https://github.com/StaryMoon/Kimi-VL-Unofficial) | Kimi-VL Technical Report | [2504.07491](https://arxiv.org/abs/2504.07491) | README, config, PyTorch interface, smoke test, release | kimi-vl, long-context, moe, multimodal, pytorch |
 | [LLaDA-V](https://github.com/StaryMoon/LLaDA-V-Unofficial) | LLaDA-V: Large Language Diffusion Models with Visual Instruction Tuning | [2505.16933](https://arxiv.org/abs/2505.16933) | README, config, PyTorch interface, smoke test, release | cvpr-2026, diffusion-language-model, diffusion-model, mllm, multimodal |
 | [MiniMax-01](https://github.com/StaryMoon/MiniMax-01-Unofficial) | MiniMax-01: Scaling Foundation Models with Lightning Attention | [2501.08313](https://arxiv.org/abs/2501.08313) | README, config, PyTorch interface, smoke test, release | attention, lightning-attention, llm, long-context, minimax |
 | [Qwen2-5-VL](https://github.com/StaryMoon/Qwen2-5-VL-Unofficial) | Qwen2.5-VL Technical Report | [2502.13923](https://arxiv.org/abs/2502.13923) | README, config, PyTorch interface, smoke test, release | document-understanding, mllm, pytorch, qwen, reproduction |
-| [Seed-Coder](https://github.com/StaryMoon/Seed-Coder-Unofficial) | Seed-Coder: Let the Code Model Curate Data for Itself | [2506.03524](https://arxiv.org/abs/2506.03524) | README, config, PyTorch interface, smoke test, release | code-generation, code-llm, data-curation, llm, pytorch |
-| [SnowMaster](https://github.com/StaryMoon/SnowMaster-Unofficial) | SnowMaster: Comprehensive Real-world Image Desnowing via MLLM with Multi-Model Feedback Optimization | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Lai_SnowMaster_Comprehensive_Real-world_Image_Desnowing_via_MLLM_with_Multi-Model_Feedback_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, image-desnowing, image-restoration, mllm |
 
 ### Reasoning LLMs
 
@@ -65,7 +77,6 @@ The full machine-readable dataset lives in [`data/reproductions.json`](data/repr
 | [DeepSeek-R1](https://github.com/StaryMoon/DeepSeek-R1-Unofficial) | DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning | [2501.12948](https://arxiv.org/abs/2501.12948) | README, config, PyTorch interface, smoke test, release | deepseek-r1, grpo, llm, pytorch, reasoning |
 | [Kimi-k1-5](https://github.com/StaryMoon/Kimi-k1-5-Unofficial) | Kimi k1.5: Scaling Reinforcement Learning with LLMs | [2501.12599](https://arxiv.org/abs/2501.12599) | README, config, PyTorch interface, smoke test, release | kimi, llm, long-context, pytorch, reasoning |
 | [LIMO](https://github.com/StaryMoon/LIMO-Unofficial) | LIMO: Less is More for Reasoning | [2502.03387](https://arxiv.org/abs/2502.03387) | README, config, PyTorch interface, smoke test, release | data-efficient-learning, math-reasoning, pytorch, reasoning, reproduction |
-| [LongVT](https://github.com/StaryMoon/LongVT-Unofficial) | LongVT: Incentivizing Thinking with Long Videos via Native Tool Calling | [2511.20785](https://arxiv.org/abs/2511.20785) | README, config, PyTorch interface, smoke test, release | cvpr-2026, long-video-understanding, mllm, pytorch, reproduction |
 | [Open-Reasoner-Zero](https://github.com/StaryMoon/Open-Reasoner-Zero-Unofficial) | Open-Reasoner-Zero: An Open Source Approach to Scaling Up Reinforcement Learning on the Base Model | [2503.24290](https://arxiv.org/abs/2503.24290) | README, config, PyTorch interface, smoke test, release | llm-reasoning, open-reasoner-zero, ppo, pytorch, reinforcement-learning |
 | [Phi-4](https://github.com/StaryMoon/Phi-4-Unofficial) | Phi-4 Technical Report | [2412.08905](https://arxiv.org/abs/2412.08905) | README, config, PyTorch interface, smoke test, release | compact-model, llm, phi-4, pytorch, reasoning |
 | [Qwen3](https://github.com/StaryMoon/Qwen3-Unofficial) | Qwen3 Technical Report | [2505.09388](https://arxiv.org/abs/2505.09388) | README, config, PyTorch interface, smoke test, release | llm, moe, multilingual, pytorch, qwen3 |
@@ -80,15 +91,12 @@ The full machine-readable dataset lives in [`data/reproductions.json`](data/repr
 | [Janus-CVPR2025](https://github.com/StaryMoon/Janus-CVPR2025-Unofficial) | Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Wu_Janus_Decoupling_Visual_Encoding_for_Unified_Multimodal_Understanding_and_Generation_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, generation, image-generation, multimodal |
 | [Janus-Pro](https://github.com/StaryMoon/Janus-Pro-Unofficial) | Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling | [2501.17811](https://arxiv.org/abs/2501.17811) | README, config, PyTorch interface, smoke test, release | image-generation, janus-pro, multimodal-generation, pytorch, reproduction |
 | [OmniGen2](https://github.com/StaryMoon/OmniGen2-Unofficial) | OmniGen2: Towards Instruction-Aligned Multimodal Generation | [2506.18871](https://arxiv.org/abs/2506.18871) | README, config, PyTorch interface, smoke test, release | cvpr-2026, diffusion, image-generation, instruction-following, multimodal-generation |
-| [OpenVLA](https://github.com/StaryMoon/OpenVLA-Unofficial) | OpenVLA: An Open-Source Vision-Language-Action Model | [2406.09246](https://arxiv.org/abs/2406.09246) | README, config, PyTorch interface, smoke test, release | openvla, pytorch, reproduction, robot-manipulation, robotics |
-| [Pi0](https://github.com/StaryMoon/Pi0-Unofficial) | $π_0$: A Vision-Language-Action Flow Model for General Robot Control | [2410.24164](https://arxiv.org/abs/2410.24164) | README, config, PyTorch interface, smoke test, release | flow-matching, pi0, pytorch, reproduction, robot-policy |
-| [RoboBrain](https://github.com/StaryMoon/RoboBrain-Unofficial) | RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Ji_RoboBrain_A_Unified_Brain_Model_for_Robotic_Manipulation_from_Abstract_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, embodied-ai, manipulation, pytorch |
-| [S-Seg](https://github.com/StaryMoon/S-Seg-Unofficial) | Exploring Simple Open-Vocabulary Semantic Segmentation | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Lai_Exploring_Simple_Open-Vocabulary_Semantic_Segmentation_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, maskformer, open-vocabulary-segmentation, pytorch |
 
 ### Video and World Models
 
 | Repo | Paper | Source | Implementation status | Tags |
 |---|---|---|---|---|
+| [LongVT](https://github.com/StaryMoon/LongVT-Unofficial) | LongVT: Incentivizing Thinking with Long Videos via Native Tool Calling | [2511.20785](https://arxiv.org/abs/2511.20785) | README, config, PyTorch interface, smoke test, release | cvpr-2026, long-video-understanding, mllm, pytorch, reproduction |
 | [CogVideoX](https://github.com/StaryMoon/CogVideoX-Unofficial) | CogVideoX: Text-to-Video Diffusion Models with An Expert Transformer | [2408.06072](https://arxiv.org/abs/2408.06072) | README, config, PyTorch interface, smoke test, release | cogvideox, diffusion-transformer, pytorch, reproduction, text-to-video |
 | [Cosmos-WFM](https://github.com/StaryMoon/Cosmos-WFM-Unofficial) | Cosmos World Foundation Model Platform for Physical AI | [2501.03575](https://arxiv.org/abs/2501.03575) | README, config, PyTorch interface, smoke test, release | cosmos, physical-ai, pytorch, reproduction, robotics |
 | [DeltaWorld](https://github.com/StaryMoon/DeltaWorld-Unofficial) | A Frame Is Worth One Token: Efficient Generative World Modeling with Delta Tokens | [2604.04913](https://arxiv.org/abs/2604.04913) | README, config, PyTorch interface, smoke test, release | cvpr-2026, cvpr-highlight, delta-tokens, pytorch, reproduction |
@@ -104,6 +112,8 @@ The full machine-readable dataset lives in [`data/reproductions.json`](data/repr
 
 | Repo | Paper | Source | Implementation status | Tags |
 |---|---|---|---|---|
+| [Chat2SVG](https://github.com/StaryMoon/Chat2SVG-Unofficial) | Chat2SVG: Vector Graphics Generation with Large Language Models and Image Diffusion Models | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Wu_Chat2SVG_Vector_Graphics_Generation_with_Large_Language_Models_and_Image_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, diffusion, llm, multimodal-generation |
+| [DiffSensei](https://github.com/StaryMoon/DiffSensei-Unofficial) | DiffSensei: Bridging Multi-Modal LLMs and Diffusion Models for Customized Manga Generation | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Wu_DiffSensei_Bridging_Multi-Modal_LLMs_and_Diffusion_Models_for_Customized_Manga_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, diffusion, diffusion-model, manga-generation |
 | [ACE-Step](https://github.com/StaryMoon/ACE-Step-Unofficial) | ACE-Step: A Step Towards Music Generation Foundation Model | [2506.00045](https://arxiv.org/abs/2506.00045) | README, config, PyTorch interface, smoke test, release | ace-step, audio, diffusion, foundation-model, music-generation |
 | [SANA](https://github.com/StaryMoon/SANA-Unofficial) | SANA: Efficient High-Resolution Image Synthesis with Linear Diffusion Transformers | [2410.10629](https://arxiv.org/abs/2410.10629) | README, config, PyTorch interface, smoke test, release | diffusion-transformer, efficient-ai, linear-attention, pytorch, reproduction |
 | [Stable-Diffusion-3](https://github.com/StaryMoon/Stable-Diffusion-3-Unofficial) | Scaling Rectified Flow Transformers for High-Resolution Image Synthesis | [2403.03206](https://arxiv.org/abs/2403.03206) | README, config, PyTorch interface, smoke test, release | diffusion-transformer, pytorch, rectified-flow, reproduction, stable-diffusion-3 |
@@ -128,11 +138,15 @@ The full machine-readable dataset lives in [`data/reproductions.json`](data/repr
 | [DexGrasp-Anything](https://github.com/StaryMoon/DexGrasp-Anything-Unofficial) | DexGrasp Anything: Towards Universal Robotic Dexterous Grasping with Physics Awareness | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Zhong_DexGrasp_Anything_Towards_Universal_Robotic_Dexterous_Grasping_with_Physics_Awareness_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, dexterous-grasping, dexterous-manipulation, physics-aware |
 | [RDT-1B](https://github.com/StaryMoon/RDT-1B-Unofficial) | RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation | [2410.07864](https://arxiv.org/abs/2410.07864) | README, config, PyTorch interface, smoke test, release | bimanual-manipulation, diffusion-transformer, pytorch, rdt, reproduction |
 | [Tartan-IMU](https://github.com/StaryMoon/Tartan-IMU-Unofficial) | Tartan IMU: A Light Foundation Model for Inertial Positioning in Robotics | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Zhao_Tartan_IMU_A_Light_Foundation_Model_for_Inertial_Positioning_in_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, foundation-model, imu, inertial-positioning |
+| [OpenVLA](https://github.com/StaryMoon/OpenVLA-Unofficial) | OpenVLA: An Open-Source Vision-Language-Action Model | [2406.09246](https://arxiv.org/abs/2406.09246) | README, config, PyTorch interface, smoke test, release | openvla, pytorch, reproduction, robot-manipulation, robotics |
+| [Pi0](https://github.com/StaryMoon/Pi0-Unofficial) | $π_0$: A Vision-Language-Action Flow Model for General Robot Control | [2410.24164](https://arxiv.org/abs/2410.24164) | README, config, PyTorch interface, smoke test, release | flow-matching, pi0, pytorch, reproduction, robot-policy |
+| [RoboBrain](https://github.com/StaryMoon/RoboBrain-Unofficial) | RoboBrain: A Unified Brain Model for Robotic Manipulation from Abstract to Concrete | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Ji_RoboBrain_A_Unified_Brain_Model_for_Robotic_Manipulation_from_Abstract_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, embodied-ai, manipulation, pytorch |
 
 ### Image Restoration
 
 | Repo | Paper | Source | Implementation status | Tags |
 |---|---|---|---|---|
+| [SnowMaster](https://github.com/StaryMoon/SnowMaster-Unofficial) | SnowMaster: Comprehensive Real-world Image Desnowing via MLLM with Multi-Model Feedback Optimization | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Lai_SnowMaster_Comprehensive_Real-world_Image_Desnowing_via_MLLM_with_Multi-Model_Feedback_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, image-desnowing, image-restoration, mllm |
 | [Dual-Prompt-DiT](https://github.com/StaryMoon/Dual-Prompt-DiT-Unofficial) | Dual Prompting Image Restoration with Diffusion Transformers | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Kong_Dual_Prompting_Image_Restoration_with_Diffusion_Transformers_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, diffusion-transformer, image-restoration, prompt-learning |
 | [IPC-Dehaze](https://github.com/StaryMoon/IPC-Dehaze-Unofficial) | Iterative Predictor-Critic Code Decoding for Real-World Image Dehazing | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Fu_Iterative_Predictor-Critic_Code_Decoding_for_Real-World_Image_Dehazing_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | codebook, computer-vision, cvpr-2025, image-dehazing, image-restoration |
 | [OSDFace](https://github.com/StaryMoon/OSDFace-Unofficial) | OSDFace: One-Step Diffusion Model for Face Restoration | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_OSDFace_One-Step_Diffusion_Model_for_Face_Restoration_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, diffusion, diffusion-model, face-restoration |
@@ -145,8 +159,15 @@ The full machine-readable dataset lives in [`data/reproductions.json`](data/repr
 | Repo | Paper | Source | Implementation status | Tags |
 |---|---|---|---|---|
 | [Motions-as-Queries](https://github.com/StaryMoon/Motions-as-Queries-Unofficial) | Motions as Queries: One-Stage Multi-Person Holistic Human Motion Capture | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Liu_Motions_as_Queries_One-Stage_Multi-Person_Holistic_Human_Motion_Capture_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, human-motion-capture, motion-queries, motion-reconstruction |
+| [S-Seg](https://github.com/StaryMoon/S-Seg-Unofficial) | Exploring Simple Open-Vocabulary Semantic Segmentation | [Paper](https://openaccess.thecvf.com/content/CVPR2025/html/Lai_Exploring_Simple_Open-Vocabulary_Semantic_Segmentation_CVPR_2025_paper.html) | README, config, PyTorch interface, smoke test, release | computer-vision, cvpr-2025, maskformer, open-vocabulary-segmentation, pytorch |
 
-### Other AI Papers
+### Code Models
+
+| Repo | Paper | Source | Implementation status | Tags |
+|---|---|---|---|---|
+| [Seed-Coder](https://github.com/StaryMoon/Seed-Coder-Unofficial) | Seed-Coder: Let the Code Model Curate Data for Itself | [2506.03524](https://arxiv.org/abs/2506.03524) | README, config, PyTorch interface, smoke test, release | code-generation, code-llm, data-curation, llm, pytorch |
+
+### Efficient Sequence Models
 
 | Repo | Paper | Source | Implementation status | Tags |
 |---|---|---|---|---|

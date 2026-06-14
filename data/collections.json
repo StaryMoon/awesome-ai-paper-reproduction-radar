@@ -1,0 +1,121 @@
+{
+  "collections": [
+    {
+      "id": "reasoning-rl-test-time-scaling",
+      "title": "Reasoning RL and Test-Time Scaling Pack",
+      "hook": "For readers tracking how long-chain reasoning moved from prompting tricks to RL systems, budget forcing, and verification-heavy training loops.",
+      "who": "LLM researchers, students building reasoning baselines, and engineers following GRPO-style systems.",
+      "why_now": "Reasoning models are still the highest-search AI topic, and readers want one place that links papers, repos, and implementation interfaces.",
+      "repos": [
+        "DeepSeek-R1-Unofficial",
+        "Kimi-k1-5-Unofficial",
+        "s1-Test-Time-Scaling-Unofficial",
+        "LIMO-Unofficial",
+        "DAPO-Unofficial",
+        "Open-Reasoner-Zero-Unofficial",
+        "Skywork-OR1-Unofficial",
+        "Qwen3-Unofficial"
+      ]
+    },
+    {
+      "id": "frontier-llm-engineering",
+      "title": "Frontier LLM Engineering Pack",
+      "hook": "For readers who care about MoE, long context, compact reasoning models, synthetic data, and attention-level engineering.",
+      "who": "LLM infrastructure learners, model architecture readers, and people comparing technical reports.",
+      "why_now": "Most technical report readers do not need a full training run first; they need a structured implementation map and citation trail.",
+      "repos": [
+        "DeepSeek-V3-Unofficial",
+        "Qwen3-Unofficial",
+        "Gemma-3-Unofficial",
+        "Phi-4-Unofficial",
+        "MiniMax-01-Unofficial",
+        "Mamba2-Unofficial"
+      ]
+    },
+    {
+      "id": "vlm-agent-multimodal",
+      "title": "VLM, Multimodal, and Agent Interface Pack",
+      "hook": "For readers following the path from visual understanding to tool-use, GUI agents, document understanding, and unified generation.",
+      "who": "VLM students, multimodal agent builders, and researchers looking for cross-modal repo templates.",
+      "why_now": "VLM work is fragmented across understanding, generation, action, and agent tasks; this track groups them by reusable interface shape.",
+      "repos": [
+        "Qwen2-5-VL-Unofficial",
+        "InternVL3-Unofficial",
+        "Kimi-VL-Unofficial",
+        "Janus-Pro-Unofficial",
+        "Janus-CVPR2025-Unofficial",
+        "LLaDA-V-Unofficial",
+        "OmniGen2-Unofficial",
+        "Demo2Tutorial-Unofficial"
+      ]
+    },
+    {
+      "id": "video-world-models",
+      "title": "Video Generation and World Model Pack",
+      "hook": "For readers watching text-to-video, camera control, delta-token world models, and physical-AI video priors converge.",
+      "who": "Video generation builders, world model readers, and robotics people who need visual dynamics references.",
+      "why_now": "Video/world-model papers are search-heavy but scattered; a curated track makes the field easier to scan.",
+      "repos": [
+        "HunyuanVideo-Unofficial",
+        "CogVideoX-Unofficial",
+        "Wan2-1-Unofficial",
+        "Cosmos-WFM-Unofficial",
+        "DeltaWorld-Unofficial",
+        "LongVT-Unofficial",
+        "VideoDirector-Unofficial",
+        "ReCapture-Unofficial",
+        "SketchVideo-Unofficial",
+        "Presto-SCA-Unofficial"
+      ]
+    },
+    {
+      "id": "3d-rendering-generation",
+      "title": "3D, Gaussian, and Rendering Pack",
+      "hook": "For readers connecting 3D generation, Gaussian splatting, inverse rendering, and embodied scene construction.",
+      "who": "3D vision students, graphics readers, and embodied AI researchers who need a cross-paper map.",
+      "why_now": "3D repos are often hard to compare because each paper uses different asset, rendering, and representation assumptions.",
+      "repos": [
+        "Hunyuan3D-2-Unofficial",
+        "TRELLIS-Unofficial",
+        "FlashGS-Unofficial",
+        "Feat2GS-Unofficial",
+        "DeSiRe-GS-Unofficial",
+        "Omni-Scene-Unofficial",
+        "ThreeDTopia-XL-Unofficial",
+        "SAGE-3D-Unofficial",
+        "Diffusion-Renderer-Unofficial"
+      ]
+    },
+    {
+      "id": "image-restoration-cvpr",
+      "title": "Image Restoration and Low-Level Vision Pack",
+      "hook": "For readers in deraining, dehazing, desnowing, low-light enhancement, restoration diffusion, and flow-based restoration.",
+      "who": "Low-level vision researchers, restoration students, and people following CVPR restoration papers.",
+      "why_now": "Restoration work is easier to buy into when papers are grouped by degradation, prior, and interface rather than by conference only.",
+      "repos": [
+        "ResFlow-Unofficial",
+        "IPC-Dehaze-Unofficial",
+        "OSDFace-Unofficial",
+        "Dual-Prompt-DiT-Unofficial",
+        "UniRestore-Unofficial",
+        "URWKV-Unofficial",
+        "SnowMaster-Unofficial"
+      ]
+    },
+    {
+      "id": "robotics-vla-embodied",
+      "title": "Robotics, VLA, and Embodied AI Pack",
+      "hook": "For readers following vision-language-action models, bimanual manipulation, dexterous grasping, and inertial robot positioning.",
+      "who": "Robotics students, embodied AI builders, and people comparing action-conditioned model interfaces.",
+      "why_now": "Robotics papers are getting pulled into foundation-model discussions; a focused track makes this transition more legible.",
+      "repos": [
+        "OpenVLA-Unofficial",
+        "Pi0-Unofficial",
+        "RDT-1B-Unofficial",
+        "DexGrasp-Anything-Unofficial",
+        "RoboBrain-Unofficial",
+        "Tartan-IMU-Unofficial"
+      ]
+    }
+  ]
+}

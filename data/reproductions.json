@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-06-14T06:56:43.252518+00:00",
+    "generated_at": "2026-06-14T09:13:59.337307+00:00",
     "owner": "StaryMoon",
     "repository_count": 61,
     "source": "GitHub repositories owned by StaryMoon ending with -Unofficial, enriched with local README metadata."
@@ -218,7 +218,7 @@
       "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wu_Chat2SVG_Vector_Graphics_Generation_with_Large_Language_Models_and_Image_CVPR_2025_paper.pdf",
       "arxiv_id": "",
       "area_label": "CVPR 2025",
-      "category": "Frontier LLMs",
+      "category": "Generation and Diffusion",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "computer-vision",
@@ -270,7 +270,7 @@
       "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Wu_DiffSensei_Bridging_Multi-Modal_LLMs_and_Diffusion_Models_for_Customized_Manga_CVPR_2025_paper.pdf",
       "arxiv_id": "",
       "area_label": "CVPR 2025",
-      "category": "Frontier LLMs",
+      "category": "Generation and Diffusion",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "computer-vision",
@@ -450,7 +450,7 @@
       "pdf_url": "https://arxiv.org/pdf/2506.03524",
       "arxiv_id": "2506.03524",
       "area_label": "Code LLM / arXiv 2025",
-      "category": "Frontier LLMs",
+      "category": "Code Models",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "code-generation",
@@ -476,7 +476,7 @@
       "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Lai_SnowMaster_Comprehensive_Real-world_Image_Desnowing_via_MLLM_with_Multi-Model_Feedback_CVPR_2025_paper.pdf",
       "arxiv_id": "",
       "area_label": "CVPR 2025",
-      "category": "Frontier LLMs",
+      "category": "Image Restoration",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "computer-vision",
@@ -723,7 +723,7 @@
       "pdf_url": "https://arxiv.org/pdf/2405.21060",
       "arxiv_id": "2405.21060",
       "area_label": "Efficient Sequence Models / arXiv 2024",
-      "category": "Other AI Papers",
+      "category": "Efficient Sequence Models",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "efficient-attention",
@@ -846,7 +846,7 @@
       "pdf_url": "",
       "arxiv_id": "2511.20785",
       "area_label": "CVPR 2026 / arXiv 2025",
-      "category": "Reasoning LLMs",
+      "category": "Video and World Models",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "cvpr-2026",
@@ -1454,7 +1454,7 @@
       "pdf_url": "https://arxiv.org/pdf/2406.09246",
       "arxiv_id": "2406.09246",
       "area_label": "VLA Robotics / arXiv 2024",
-      "category": "Vision-Language Models",
+      "category": "Robotics and Embodied AI",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "openvla",
@@ -1478,7 +1478,7 @@
       "pdf_url": "https://arxiv.org/pdf/2410.24164",
       "arxiv_id": "2410.24164",
       "area_label": "VLA Robotics / arXiv 2024",
-      "category": "Vision-Language Models",
+      "category": "Robotics and Embodied AI",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "flow-matching",
@@ -1503,7 +1503,7 @@
       "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Ji_RoboBrain_A_Unified_Brain_Model_for_Robotic_Manipulation_from_Abstract_CVPR_2025_paper.pdf",
       "arxiv_id": "",
       "area_label": "CVPR 2025",
-      "category": "Vision-Language Models",
+      "category": "Robotics and Embodied AI",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "computer-vision",
@@ -1529,7 +1529,7 @@
       "pdf_url": "https://openaccess.thecvf.com/content/CVPR2025/papers/Lai_Exploring_Simple_Open-Vocabulary_Semantic_Segmentation_CVPR_2025_paper.pdf",
       "arxiv_id": "",
       "area_label": "CVPR 2025",
-      "category": "Vision-Language Models",
+      "category": "Segmentation and Motion",
       "status": "README, config, PyTorch interface, smoke test, release",
       "tags": [
         "computer-vision",
