@@ -4,7 +4,7 @@
 
 **A searchable radar of high-interest AI papers and unofficial PyTorch reproduction repositories.**
 
-![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Collections](https://img.shields.io/badge/curated_tracks-7-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-14-green) ![License](https://img.shields.io/badge/license-MIT-green)
+![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Collections](https://img.shields.io/badge/curated_tracks-7-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-15-green) ![License](https://img.shields.io/badge/license-MIT-green)
 
 [Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · [Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)
 
