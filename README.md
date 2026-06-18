@@ -4,7 +4,9 @@
 
 **A searchable radar of high-interest AI papers and unofficial PyTorch reproduction repositories.**
 
-![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Collections](https://img.shields.io/badge/curated_tracks-7-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-17-green) ![License](https://img.shields.io/badge/license-MIT-green)
+Find hot AI papers, code status, and unofficial reproduction starters in one searchable radar.
+
+![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Collections](https://img.shields.io/badge/curated_tracks-7-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-18-green) ![License](https://img.shields.io/badge/license-MIT-green)
 
 [Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · [Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)
 
@@ -22,6 +24,23 @@ Most paper lists are either raw link dumps or single-topic awesome lists. This r
 - **Daily metadata refresh**: GitHub Actions can refresh stars, topics, and push timestamps without manual bookkeeping.
 
 Every linked implementation is clearly marked as **unofficial** and keeps paper citations separate from local experiment logs.
+
+## Hot Papers Without Official Code Indexed Yet
+
+This section highlights papers where the radar currently indexes an unofficial starter but no official-code link. It is meant for readers deciding what to read, reproduce, or watch next.
+
+| Paper | Venue / topic | Official code status | Unofficial starter | Why people search it |
+|---|---|---|---|---|
+| [Skywork Open Reasoner 1 Technical Report](https://arxiv.org/abs/2505.22312) | Reasoning RL / arXiv 2025 | Not indexed here yet | [Skywork-OR1](https://github.com/StaryMoon/Skywork-OR1-Unofficial) | Reasoning RL and test-time scaling papers are searched for starter code before official recipes settle. |
+| [Phi-4 Technical Report](https://arxiv.org/abs/2412.08905) | Compact Reasoning LLM / arXiv 2024 | Not indexed here yet | [Phi-4](https://github.com/StaryMoon/Phi-4-Unofficial) | Reasoning RL and test-time scaling papers are searched for starter code before official recipes settle. |
+| [Wan: Open and Advanced Large-Scale Video Generative Models](https://arxiv.org/abs/2503.20314) | Video Generation / arXiv 2025 | Not indexed here yet | [Wan2-1](https://github.com/StaryMoon/Wan2-1-Unofficial) | Video generation and world-model papers are hard to compare without a runnable interface map. |
+| [Cosmos World Foundation Model Platform for Physical AI](https://arxiv.org/abs/2501.03575) | World Models / arXiv 2025 | Not indexed here yet | [Cosmos-WFM](https://github.com/StaryMoon/Cosmos-WFM-Unofficial) | Video generation and world-model papers are hard to compare without a runnable interface map. |
+| [RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation](https://arxiv.org/abs/2410.07864) | Robotics Diffusion / arXiv 2024 | Not indexed here yet | [RDT-1B](https://github.com/StaryMoon/RDT-1B-Unofficial) | VLA and robot-policy readers need quick links from papers to action-interface starters. |
+| [OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246) | VLA Robotics / arXiv 2024 | Not indexed here yet | [OpenVLA](https://github.com/StaryMoon/OpenVLA-Unofficial) | VLA and robot-policy readers need quick links from papers to action-interface starters. |
+| [OSDFace: One-Step Diffusion Model for Face Restoration](https://openaccess.thecvf.com/content/CVPR2025/html/Wang_OSDFace_One-Step_Diffusion_Model_for_Face_Restoration_CVPR_2025_paper.html) | CVPR 2025 | Not indexed here yet | [OSDFace](https://github.com/StaryMoon/OSDFace-Unofficial) | Restoration papers attract readers looking for baselines, degradation settings, and PyTorch entrypoints. |
+| [UniRestore: Unified Perceptual and Task-Oriented Image Restoration Model Using Diffusion Prior](https://openaccess.thecvf.com/content/CVPR2025/html/Chen_UniRestore_Unified_Perceptual_and_Task-Oriented_Image_Restoration_Model_Using_Diffusion_CVPR_2025_paper.html) | CVPR 2025 | Not indexed here yet | [UniRestore](https://github.com/StaryMoon/UniRestore-Unofficial) | Restoration papers attract readers looking for baselines, degradation settings, and PyTorch entrypoints. |
+| [Janus-Pro: Unified Multimodal Understanding and Generation with Data and Model Scaling](https://arxiv.org/abs/2501.17811) | Multimodal Generation / arXiv 2025 | Not indexed here yet | [Janus-Pro](https://github.com/StaryMoon/Janus-Pro-Unofficial) | Multimodal papers move quickly, so readers often search for unified starter repos. |
+| [Janus: Decoupling Visual Encoding for Unified Multimodal Understanding and Generation](https://openaccess.thecvf.com/content/CVPR2025/html/Wu_Janus_Decoupling_Visual_Encoding_for_Unified_Multimodal_Understanding_and_Generation_CVPR_2025_paper.html) | CVPR 2025 | Not indexed here yet | [Janus-CVPR2025](https://github.com/StaryMoon/Janus-CVPR2025-Unofficial) | Multimodal papers move quickly, so readers often search for unified starter repos. |
 
 ## Radar Snapshot
 

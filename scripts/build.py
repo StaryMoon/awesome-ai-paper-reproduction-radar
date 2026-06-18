@@ -30,6 +30,16 @@ CATEGORY_ORDER = [
     "Other AI Papers",
 ]
 
+HOT_WITHOUT_CODE_CATEGORIES = [
+    "Reasoning LLMs",
+    "Video and World Models",
+    "Robotics and Embodied AI",
+    "Image Restoration",
+    "Vision-Language Models",
+]
+
+HOT_WITHOUT_CODE_LIMIT = 10
+
 
 def load() -> tuple[dict, list[dict]]:
     data = json.loads(DATA.read_text(encoding="utf-8"))
@@ -82,6 +92,50 @@ def render_collection_row(collection: dict) -> str:
     return f"| [{collection['title']}]({link}) | {collection['who']} | {collection['why_now']} | {repos} |"
 
 
+def why_people_search(item: dict) -> str:
+    category = item.get("category", "")
+    tags = set(item.get("tags", []))
+    if category == "Reasoning LLMs":
+        return "Reasoning RL and test-time scaling papers are searched for starter code before official recipes settle."
+    if category == "Video and World Models":
+        return "Video generation and world-model papers are hard to compare without a runnable interface map."
+    if category == "Robotics and Embodied AI":
+        return "VLA and robot-policy readers need quick links from papers to action-interface starters."
+    if category == "Image Restoration":
+        return "Restoration papers attract readers looking for baselines, degradation settings, and PyTorch entrypoints."
+    if category == "Vision-Language Models" or "multimodal" in tags:
+        return "Multimodal papers move quickly, so readers often search for unified starter repos."
+    return "High-interest paper with an unofficial starter that is easier to scan from a single radar."
+
+
+def hot_without_official_code_rows(papers: list[dict]) -> list[str]:
+    selected: list[dict] = []
+    for category in HOT_WITHOUT_CODE_CATEGORIES:
+        bucket = [
+            item for item in papers
+            if item.get("category") == category and item.get("github_url") and "unofficial" in item.get("github_url", "").lower()
+        ]
+        bucket.sort(key=lambda item: (item.get("stars", 0), item.get("pushed_at", ""), item.get("repo", "")), reverse=True)
+        selected.extend(bucket[:2])
+
+    seen: set[str] = set()
+    rows: list[str] = []
+    for item in selected[:HOT_WITHOUT_CODE_LIMIT]:
+        if item["repo"] in seen:
+            continue
+        seen.add(item["repo"])
+        rows.append(
+            "| {paper} | {topic} | {official} | {starter} | {why} |".format(
+                paper=f"[{item['paper_title'].replace('|', '\\|')}]({item['paper_url']})" if item.get("paper_url") else item["paper_title"].replace("|", "\\|"),
+                topic=item.get("area_label") or item.get("category", "-"),
+                official="Not indexed here yet",
+                starter=f"[{repo_label(item)}]({item['github_url']})",
+                why=why_people_search(item).replace("|", "/"),
+            )
+        )
+    return rows
+
+
 def render_readme(data: dict, collections: list[dict]) -> str:
     papers = data["papers"]
     counts = Counter(p.get("category", "Other AI Papers") for p in papers)
@@ -96,6 +150,8 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         '<div align="center">',
         "",
         "**A searchable radar of high-interest AI papers and unofficial PyTorch reproduction repositories.**",
+        "",
+        "Find hot AI papers, code status, and unofficial reproduction starters in one searchable radar.",
         "",
         f"![Repos](https://img.shields.io/badge/reproductions-{len(papers)}-blue) "
         f"![Collections](https://img.shields.io/badge/curated_tracks-{len(collections)}-purple) "
@@ -119,6 +175,17 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "- **Daily metadata refresh**: GitHub Actions can refresh stars, topics, and push timestamps without manual bookkeeping.",
         "",
         "Every linked implementation is clearly marked as **unofficial** and keeps paper citations separate from local experiment logs.",
+        "",
+        "## Hot Papers Without Official Code Indexed Yet",
+        "",
+        "This section highlights papers where the radar currently indexes an unofficial starter but no official-code link. It is meant for readers deciding what to read, reproduce, or watch next.",
+        "",
+        "| Paper | Venue / topic | Official code status | Unofficial starter | Why people search it |",
+        "|---|---|---|---|---|",
+    ]
+    lines.extend(hot_without_official_code_rows(papers))
+
+    lines += [
         "",
         "## Radar Snapshot",
         "",
@@ -275,7 +342,7 @@ def render_site(data: dict, collections: list[dict]) -> str:
   <header>
     <div class="wrap">
       <h1>Awesome AI Paper Reproduction Radar</h1>
-      <p>A searchable radar of high-interest AI papers and unofficial PyTorch reproduction repositories. Updated {updated}.</p>
+      <p>Find hot AI papers, code status, and unofficial reproduction starters in one searchable radar. Updated {updated}.</p>
       <div class="bar">
         <input id="q" placeholder="Search paper, repo, area, tag, arXiv id..." autofocus>
         <select id="cat"><option value="">All categories</option></select>

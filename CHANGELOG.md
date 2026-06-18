@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.0 - 2026-06-18
+
+- Added a homepage "Hot Papers Without Official Code Indexed Yet" section generated from the structured radar data.
+- Added a clearer first-screen positioning line: hot AI papers, code status, and unofficial reproduction starters in one searchable radar.
+- Updated the static search page hero copy to match the new positioning.
+
 ## v0.1.0 - 2026-06-12
 
 - Initial release of Awesome AI Paper Reproduction Radar.
