@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.1 - 2026-06-19
+
+- Added the first Daily Radar Note under `docs/daily/2026-06-19.md`.
+- Added a first-screen README link to the latest daily note.
+- Refreshed the generated README and static HTML timestamp.
+
 ## v0.3.0 - 2026-06-18
 
 - Added a homepage "Hot Papers Without Official Code Indexed Yet" section generated from the structured radar data.

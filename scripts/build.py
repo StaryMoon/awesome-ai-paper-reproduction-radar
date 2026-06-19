@@ -159,6 +159,7 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "![License](https://img.shields.io/badge/license-MIT-green)",
         "",
         "[Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · "
+        "[Latest daily note](docs/daily/2026-06-19.md) · "
         "[Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)",
         "",
         "</div>",
@@ -175,6 +176,10 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "- **Daily metadata refresh**: GitHub Actions can refresh stars, topics, and push timestamps without manual bookkeeping.",
         "",
         "Every linked implementation is clearly marked as **unofficial** and keeps paper citations separate from local experiment logs.",
+        "",
+        "## Latest Daily Radar Note",
+        "",
+        "- [2026-06-19](docs/daily/2026-06-19.md) — a search-facing triage note for reasoning LLMs, video/world models, robotics/VLA, multimodal generation, and restoration starters.",
         "",
         "## Hot Papers Without Official Code Indexed Yet",
         "",

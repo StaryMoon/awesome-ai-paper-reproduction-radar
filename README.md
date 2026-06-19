@@ -6,9 +6,9 @@
 
 Find hot AI papers, code status, and unofficial reproduction starters in one searchable radar.
 
-![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Collections](https://img.shields.io/badge/curated_tracks-7-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-18-green) ![License](https://img.shields.io/badge/license-MIT-green)
+![Repos](https://img.shields.io/badge/reproductions-61-blue) ![Collections](https://img.shields.io/badge/curated_tracks-7-purple) ![Updated](https://img.shields.io/badge/updated-2026-06-19-green) ![License](https://img.shields.io/badge/license-MIT-green)
 
-[Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · [Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)
+[Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · [Latest daily note](docs/daily/2026-06-19.md) · [Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)
 
 </div>
 
@@ -24,6 +24,10 @@ Most paper lists are either raw link dumps or single-topic awesome lists. This r
 - **Daily metadata refresh**: GitHub Actions can refresh stars, topics, and push timestamps without manual bookkeeping.
 
 Every linked implementation is clearly marked as **unofficial** and keeps paper citations separate from local experiment logs.
+
+## Latest Daily Radar Note
+
+- [2026-06-19](docs/daily/2026-06-19.md) — a search-facing triage note for reasoning LLMs, video/world models, robotics/VLA, multimodal generation, and restoration starters.
 
 ## Hot Papers Without Official Code Indexed Yet
 
