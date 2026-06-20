@@ -5,7 +5,7 @@ import argparse
 import json
 import shutil
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -128,7 +128,7 @@ def hot_without_official_code_rows(papers: list[dict]) -> list[str]:
             "| {paper} | {topic} | {official} | {starter} | {why} |".format(
                 paper=f"[{item['paper_title'].replace('|', '\\|')}]({item['paper_url']})" if item.get("paper_url") else item["paper_title"].replace("|", "\\|"),
                 topic=item.get("area_label") or item.get("category", "-"),
-                official="Not indexed here yet",
+                official="Official link not indexed in this radar yet",
                 starter=f"[{repo_label(item)}]({item['github_url']})",
                 why=why_people_search(item).replace("|", "/"),
             )
@@ -139,7 +139,7 @@ def hot_without_official_code_rows(papers: list[dict]) -> list[str]:
 def render_readme(data: dict, collections: list[dict]) -> str:
     papers = data["papers"]
     counts = Counter(p.get("category", "Other AI Papers") for p in papers)
-    updated = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    updated = datetime.now().strftime("%Y-%m-%d")
     by_cat: dict[str, list[dict]] = defaultdict(list)
     for paper in papers:
         by_cat[paper.get("category", "Other AI Papers")].append(paper)
@@ -159,7 +159,8 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "![License](https://img.shields.io/badge/license-MIT-green)",
         "",
         "[Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · "
-        "[Latest daily note](docs/daily/2026-06-20.md) · "
+        "[Latest daily note](docs/daily/2026-06-21.md) · "
+        "[Code-status policy](docs/status/code-availability-policy.md) · "
         "[Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)",
         "",
         "</div>",
@@ -179,11 +180,11 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "",
         "## Latest Daily Radar Note",
         "",
-        "- [2026-06-20](docs/daily/2026-06-20.md) — a code-availability triage note for official-code links, unofficial starters, and high-search paper families.",
+        "- [2026-06-21](docs/daily/2026-06-21.md) — a maintenance note on clearer official-code status wording and starter-first tracking.",
         "",
-        "## Hot Papers Without Official Code Indexed Yet",
+        "## Starter-First Code-Status Watchlist",
         "",
-        "This section highlights papers where the radar currently indexes an unofficial starter but no official-code link. It is meant for readers deciding what to read, reproduce, or watch next.",
+        "This section highlights papers where the radar currently indexes an unofficial starter and has not yet indexed an official-code link. This is a radar status, not a claim that no official implementation exists.",
         "",
         "| Paper | Venue / topic | Official code status | Unofficial starter | Why people search it |",
         "|---|---|---|---|---|",
@@ -308,7 +309,7 @@ def render_collection_doc(collection: dict, papers_by_repo: dict[str, dict]) -> 
 def render_site(data: dict, collections: list[dict]) -> str:
     papers_json = json.dumps(data["papers"], ensure_ascii=False)
     collections_json = json.dumps(collections, ensure_ascii=False)
-    updated = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    updated = datetime.now().strftime("%Y-%m-%d")
     return f'''<!doctype html>
 <html lang="en">
 <head>

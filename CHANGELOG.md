@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.3 - 2026-06-21
+
+- Added `docs/daily/2026-06-21.md` as a code-status wording and data-quality note.
+- Added `docs/status/code-availability-policy.md`.
+- Renamed the first-screen watchlist to `Starter-First Code-Status Watchlist`.
+- Clarified that missing official links mean "not indexed in this radar yet", not "no official code exists".
+
 ## v0.3.2 - 2026-06-20
 
 - Added `docs/daily/2026-06-20.md` as a code-availability triage note.
