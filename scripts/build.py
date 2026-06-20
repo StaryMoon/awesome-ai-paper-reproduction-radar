@@ -159,7 +159,7 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "![License](https://img.shields.io/badge/license-MIT-green)",
         "",
         "[Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · "
-        "[Latest daily note](docs/daily/2026-06-19.md) · "
+        "[Latest daily note](docs/daily/2026-06-20.md) · "
         "[Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)",
         "",
         "</div>",
@@ -179,7 +179,7 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "",
         "## Latest Daily Radar Note",
         "",
-        "- [2026-06-19](docs/daily/2026-06-19.md) — a search-facing triage note for reasoning LLMs, video/world models, robotics/VLA, multimodal generation, and restoration starters.",
+        "- [2026-06-20](docs/daily/2026-06-20.md) — a code-availability triage note for official-code links, unofficial starters, and high-search paper families.",
         "",
         "## Hot Papers Without Official Code Indexed Yet",
         "",

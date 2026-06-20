@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.2 - 2026-06-20
+
+- Added `docs/daily/2026-06-20.md` as a code-availability triage note.
+- Updated the README latest-note link to point to the 2026-06-20 daily note.
+- Refreshed the generated README and static HTML timestamp.
+
 ## v0.3.1 - 2026-06-19
 
 - Added the first Daily Radar Note under `docs/daily/2026-06-19.md`.
