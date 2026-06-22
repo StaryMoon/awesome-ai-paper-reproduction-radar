@@ -21,9 +21,9 @@ AI papers often move through several public stages: preprint, project page, mode
 - When the radar has not indexed an official-code URL, the README says `Official link not indexed in this radar yet`.
 - Daily notes may highlight high-search topics, but they should not present unofficial starters as official code.
 
-## Planned Schema
+## Current Schema
 
-A future dataset revision should add explicit fields such as:
+Each paper entry now carries explicit code-status fields:
 
 ```json
 {
@@ -33,5 +33,11 @@ A future dataset revision should add explicit fields such as:
 }
 ```
 
-That would make the generated tables easier to filter and less dependent on prose wording.
+The current schema version is recorded in `data/reproductions.json` under `meta.schema_version`.
 
+## Status Values
+
+- `official_code_status: "indexed"` means `official_code_url` points to a tracked official implementation.
+- `official_code_status: "not_indexed"` means this radar has not stored an official-code URL for the entry yet.
+- `official_code_status: "not_found"` is reserved for entries where a search pass did not find an official implementation.
+- `official_code_status: "unknown"` is reserved for entries that need manual review.

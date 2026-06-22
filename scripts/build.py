@@ -66,17 +66,32 @@ def repo_label(item: dict) -> str:
     return item["repo"].replace("-Unofficial", "")
 
 
+def code_status_label(item: dict, markdown: bool = True) -> str:
+    status = item.get("official_code_status", "not_indexed")
+    url = item.get("official_code_url", "")
+    if url and status == "indexed":
+        return f"[Official indexed]({url})" if markdown else "Official indexed"
+    labels = {
+        "indexed": "Official indexed",
+        "not_indexed": "Official link not indexed in this radar yet",
+        "not_found": "Official link not found yet",
+        "unknown": "Official code status unknown",
+    }
+    return labels.get(status, str(status).replace("_", " "))
+
+
 def table_rows(papers: list[dict], category: str | None = None) -> list[str]:
     rows = []
     for item in papers:
         if category and item.get("category") != category:
             continue
         rows.append(
-            "| [{repo}]({url}) | {paper} | {source} | {status} | {tags} |".format(
+            "| [{repo}]({url}) | {paper} | {source} | {code_status} | {status} | {tags} |".format(
                 repo=repo_label(item),
                 url=item["github_url"],
                 paper=item["paper_title"].replace("|", "\\|"),
                 source=paper_link(item),
+                code_status=code_status_label(item).replace("|", "/"),
                 status=item.get("status", "-").replace("|", "/"),
                 tags=short_tags(item.get("tags", [])).replace("|", "/"),
             )
@@ -114,6 +129,7 @@ def hot_without_official_code_rows(papers: list[dict]) -> list[str]:
         bucket = [
             item for item in papers
             if item.get("category") == category and item.get("github_url") and "unofficial" in item.get("github_url", "").lower()
+            and item.get("official_code_status", "not_indexed") != "indexed"
         ]
         bucket.sort(key=lambda item: (item.get("stars", 0), item.get("pushed_at", ""), item.get("repo", "")), reverse=True)
         selected.extend(bucket[:2])
@@ -128,7 +144,7 @@ def hot_without_official_code_rows(papers: list[dict]) -> list[str]:
             "| {paper} | {topic} | {official} | {starter} | {why} |".format(
                 paper=f"[{item['paper_title'].replace('|', '\\|')}]({item['paper_url']})" if item.get("paper_url") else item["paper_title"].replace("|", "\\|"),
                 topic=item.get("area_label") or item.get("category", "-"),
-                official="Official link not indexed in this radar yet",
+                official=code_status_label(item).replace("|", "/"),
                 starter=f"[{repo_label(item)}]({item['github_url']})",
                 why=why_people_search(item).replace("|", "/"),
             )
@@ -159,7 +175,7 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "![License](https://img.shields.io/badge/license-MIT-green)",
         "",
         "[Browse table](#repository-radar) · [Curated tracks](#curated-tracks) · "
-        "[Latest daily note](docs/daily/2026-06-21.md) · "
+        "[Latest daily note](docs/daily/2026-06-22.md) · "
         "[Code-status policy](docs/status/code-availability-policy.md) · "
         "[Searchable HTML](docs/index.html) · [Data JSON](data/reproductions.json) · [Contribute](CONTRIBUTING.md)",
         "",
@@ -180,7 +196,7 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "",
         "## Latest Daily Radar Note",
         "",
-        "- [2026-06-21](docs/daily/2026-06-21.md) — a maintenance note on clearer official-code status wording and starter-first tracking.",
+        "- [2026-06-22](docs/daily/2026-06-22.md) — a schema maintenance note introducing explicit official-code and starter-type fields.",
         "",
         "## Starter-First Code-Status Watchlist",
         "",
@@ -230,8 +246,8 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         lines += [
             f"### {category}",
             "",
-            "| Repo | Paper | Source | Implementation status | Tags |",
-            "|---|---|---|---|---|",
+            "| Repo | Paper | Source | Official code status | Implementation status | Tags |",
+            "|---|---|---|---|---|---|",
         ]
         lines.extend(rows)
         lines.append("")
@@ -253,6 +269,7 @@ def render_readme(data: dict, collections: list[dict]) -> str:
         "- paper title and paper URL;",
         "- repository URL;",
         "- category and tags;",
+        "- official code status fields;",
         "- current implementation status;",
         "- clear unofficial attribution if the repository is not from the paper authors.",
         "",
@@ -366,7 +383,7 @@ def render_site(data: dict, collections: list[dict]) -> str:
     <h2>Repository Radar</h2>
     <section class="table">
       <table>
-        <thead><tr><th>Repository</th><th>Paper</th><th>Category</th><th>Source</th><th>Status</th><th>Tags</th></tr></thead>
+        <thead><tr><th>Repository</th><th>Paper</th><th>Category</th><th>Source</th><th>Official Code</th><th>Status</th><th>Tags</th></tr></thead>
         <tbody id="rows"></tbody>
       </table>
     </section>
@@ -385,15 +402,26 @@ document.getElementById('count').textContent = papers.length;
 document.getElementById('cats').textContent = cats.length;
 document.getElementById('tracks').textContent = collections.length;
 function esc(s) {{ return String(s || '').replace(/[&<>"']/g, m => ({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}}[m])); }}
+function codeStatus(p) {{
+  if (p.official_code_url && p.official_code_status === 'indexed') return `<a href="${{esc(p.official_code_url)}}">Official indexed</a>`;
+  const labels = {{
+    indexed: 'Official indexed',
+    not_indexed: 'Official link not indexed in this radar yet',
+    not_found: 'Official link not found yet',
+    unknown: 'Official code status unknown'
+  }};
+  const key = p.official_code_status || 'not_indexed';
+  return esc(labels[key] || String(key).replaceAll('_', ' '));
+}}
 cards.innerHTML = collections.map(c => `<article class="card"><h3><a href="collections/${{c.id}}.md">${{esc(c.title)}}</a></h3><p>${{esc(c.hook)}}</p><p class="muted">${{esc(c.why_now)}}</p></article>`).join('');
 function render() {{
   const query = q.value.toLowerCase().trim();
   const c = cat.value;
   const filtered = papers.filter(p => {{
-    const hay = [p.repo,p.paper_title,p.category,p.area_label,p.arxiv_id,(p.tags||[]).join(' ')].join(' ').toLowerCase();
+    const hay = [p.repo,p.paper_title,p.category,p.area_label,p.arxiv_id,p.official_code_status,p.starter_type,(p.tags||[]).join(' ')].join(' ').toLowerCase();
     return (!c || p.category === c) && (!query || hay.includes(query));
   }});
-  rows.innerHTML = filtered.map(p => `<tr><td><a href="${{p.github_url}}">${{esc(p.repo.replace('-Unofficial',''))}}</a><br><span class="muted">${{esc(p.description)}}</span></td><td>${{esc(p.paper_title)}}</td><td>${{esc(p.category)}}</td><td>${{p.paper_url ? `<a href="${{p.paper_url}}">${{esc(p.arxiv_id || 'Paper')}}</a>` : '-'}}</td><td>${{esc(p.status)}}</td><td>${{(p.tags||[]).slice(0,8).map(t=>`<span class="tag">${{esc(t)}}</span>`).join('')}}</td></tr>`).join('');
+  rows.innerHTML = filtered.map(p => `<tr><td><a href="${{p.github_url}}">${{esc(p.repo.replace('-Unofficial',''))}}</a><br><span class="muted">${{esc(p.description)}}</span></td><td>${{esc(p.paper_title)}}</td><td>${{esc(p.category)}}</td><td>${{p.paper_url ? `<a href="${{p.paper_url}}">${{esc(p.arxiv_id || 'Paper')}}</a>` : '-'}}</td><td>${{codeStatus(p)}}</td><td>${{esc(p.status)}}</td><td>${{(p.tags||[]).slice(0,8).map(t=>`<span class="tag">${{esc(t)}}</span>`).join('')}}</td></tr>`).join('');
 }}
 q.addEventListener('input', render); cat.addEventListener('change', render); render();
 </script>

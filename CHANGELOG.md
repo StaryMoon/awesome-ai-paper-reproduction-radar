@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.4 - 2026-06-22
+
+- Added explicit code-status fields to every entry in `data/reproductions.json`.
+- Added `meta.schema_version: 0.2.0` and `meta.code_status_fields`.
+- Updated generated README tables and static HTML tables with an official-code status column.
+- Added `docs/daily/2026-06-22.md` describing the schema upgrade.
+- Updated the code availability policy from planned schema to current schema.
+
 ## v0.3.3 - 2026-06-21
 
 - Added `docs/daily/2026-06-21.md` as a code-status wording and data-quality note.
