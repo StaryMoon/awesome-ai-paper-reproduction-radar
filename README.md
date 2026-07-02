@@ -14,6 +14,12 @@ Find hot AI papers, code status, and unofficial reproduction starters in one sea
 
 > Maintained by [@StaryMoon](https://github.com/StaryMoon). If this radar helps you find, compare, or start reproducing an AI paper, please consider starring the repository and following my GitHub profile.
 
+<p align="center">
+  <img src="assets/screenshots/semantic-scholar.png" alt="Semantic Scholar public paper search page screenshot" width="900">
+</p>
+
+<sub>Image source: public Semantic Scholar page screenshot, [https://www.semanticscholar.org/](https://www.semanticscholar.org/). Used here as a visual reference for paper discovery workflows; not an endorsement by Semantic Scholar.</sub>
+
 ## What Makes This Different
 
 Most paper lists are either raw link dumps or single-topic awesome lists. This radar is built around three more useful layers:
